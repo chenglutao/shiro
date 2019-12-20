@@ -25,10 +25,10 @@ public class MyExceptionHandler implements HandlerExceptionResolver {
             attributes.put("key", "9999");
             attributes.put("msg", "认证失败");
         } else if (ex instanceof UnauthorizedException) {
-            attributes.put("code", "9999");
+            attributes.put("key", "9999");
             attributes.put("msg", "无权限");
         } else {
-            attributes.put("code", "9999");
+            attributes.put("key", "9999");
             attributes.put("msg", ex.getMessage());
         }
         view.setAttributesMap(attributes);

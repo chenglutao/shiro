@@ -68,7 +68,7 @@ public class MyShiroRealm extends AuthorizingRealm {
     }
 
     public static void main(String[] args) {
-        String result = new SimpleHash("MD5", "123456", ByteSource.Util.bytes("admin"), 1024).toHex();
+        String result = new SimpleHash("MD5", "123456", ByteSource.Util.bytes("chenglutao"), 1024).toHex();
         System.out.println(result);
     }
 }

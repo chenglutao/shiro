@@ -9,6 +9,7 @@ import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.apache.shiro.subject.Subject;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -24,11 +25,11 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value = "登录接口")
 public class LoginController {
 
+    @RequiresPermissions(value = "common")
     @GetMapping("/test")
     public Object getTest() {
         return RespEntity.ok();
     }
-
 
     @ApiOperation(value = "登录", notes = "登录")
     @PostMapping("/login")
