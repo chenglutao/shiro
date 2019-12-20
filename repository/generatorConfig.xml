@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<!-- mybatis-generator:generate -->
+<generatorConfiguration>
+    <classPathEntry location="D:/GitHubCode/shiro-demo/repository/mysql-connector-java-5.1.30.jar"/>
+    <classPathEntry location="D:/GitHubCode/shiro-demo/repository/log4j-1.2.12.jar"/>
+
+    <context id="context1" targetRuntime="MyBatis3">
+
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <property name="autoDelimitKeywords" value="true"/>
+
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.RowBoundsPlugin"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+
+        <commentGenerator>
+            <property name="suppressAllComments" value="false"/>
+        </commentGenerator>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+
+                        connectionURL="jdbc:mysql://127.0.0.1:3306/shiro?characterEncoding=utf8"
+                        userId="root" password="123456"/>
+        <!-- 生成模型的包名和位置 -->
+        <javaModelGenerator targetPackage="com.study.repository.entity.generate" targetProject="src/main/java"/>
+
+        <!-- 生成映射文件的包名和位置 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+
+        <!-- 生成DAO的包名和位置 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.study.repository.dao.generate"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 此处为demo -->
+        <table tableName="user">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
+        </table>
+        <table tableName="permission">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
+        </table>
+        <table tableName="role">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
+        </table>
+        <table tableName="role_permission">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
+        </table>
+        <table tableName="user_role">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
+        </table>
+        <!--mvn mybatis-generator:generate-->
+
+    </context>
+</generatorConfiguration>
