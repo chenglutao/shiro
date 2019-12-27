@@ -39,11 +39,15 @@
         </javaClientGenerator>
 
         <!-- 此处为demo -->
-        <table tableName="user">
+        <table tableName="log">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
         </table>
-        <table tableName="permission">
+        <table tableName="login_log">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
+        </table>
+        <table tableName="menu">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
         </table>
@@ -51,7 +55,11 @@
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
         </table>
-        <table tableName="role_permission">
+        <table tableName="role_menu">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
+        </table>
+        <table tableName="user">
             <generatedKey column="id" sqlStatement="MySql" identity="true"/>
             <!--<domainObjectRenamingRule searchString="^Ocs" replaceString=""/>-->
         </table>

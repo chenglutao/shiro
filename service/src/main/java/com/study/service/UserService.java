@@ -1,6 +1,5 @@
 package com.study.service;
 
-import com.study.common.entity.RespEntity;
 import com.study.repository.entity.generate.User;
 
 /**
@@ -9,5 +8,5 @@ import com.study.repository.entity.generate.User;
  */
 public interface UserService {
 
-    User getName(String name);
+    User getName(String userName);
 }

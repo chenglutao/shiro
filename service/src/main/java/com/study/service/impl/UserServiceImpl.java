@@ -30,7 +30,7 @@ public class UserServiceImpl implements UserService {
         }
         UserExample example = new UserExample();
         UserExample.Criteria criteria = example.createCriteria();
-        criteria.andNameEqualTo(name);
+        criteria.andUserNameEqualTo(name);
         criteria.andStateEqualTo(1);
         List<User> usersList = userMapper.selectByExample(example);
         if (CollectionUtils.isEmpty(usersList)){
