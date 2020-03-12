@@ -1,5 +1,6 @@
 package com.study.service;
 
+import com.study.common.entity.PageEntity;
 import com.study.common.entity.RespEntity;
 import com.study.repository.entity.generate.Menu;
 
@@ -31,9 +32,13 @@ public interface MenuService {
      */
     List<Menu> list();
 
-    void add(Menu menu);
+    Integer add(Menu menu);
 
-    void update(Menu menu);
+    Integer update(Menu menu);
 
     RespEntity delete(String menuId);
+
+    PageEntity<Menu> page(String menuName, String pageSize, String pageNum);
+
+    Menu detail(String menuId);
 }

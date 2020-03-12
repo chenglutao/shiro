@@ -1,7 +1,5 @@
 package com.study.api.controller;
 
-import com.study.api.config.MyShiroRealm;
-import com.study.common.util.SpringContextUtils;
 import com.study.common.entity.Key;
 import com.study.common.entity.RespEntity;
 import com.study.repository.entity.generate.Menu;
@@ -12,7 +10,6 @@ import org.apache.commons.lang3.StringUtils;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
@@ -52,6 +49,18 @@ public class MenuController extends BaseController {
         } catch (Exception e) {
             return RespEntity.error(e.getMessage());
         }
+    }
+
+    @PostMapping("page")
+    public Object page(@RequestParam(value = "menuName", required = false) String menuName,
+                       @RequestParam(value = "pageSize", required = false) String pageSize,
+                       @RequestParam(value = "pageNum", required = false) String pageNum){
+        try{
+            return menuService.page(menuName, pageSize, pageNum);
+        } catch (Exception e) {
+            return RespEntity.error(e.getMessage());
+        }
+
     }
 
     @PostMapping("add")
@@ -110,7 +119,19 @@ public class MenuController extends BaseController {
         }
     }
 
-    private Menu menu(Integer parentId, String menuName, String url, String perms, String icon, String type, Integer orderBy) {
+    @PostMapping({"detail"})
+    @RequiresPermissions("menu:detail")
+    public Object detail(@RequestParam(value = "menuId", required = true) String menuId) {
+        try {
+            Menu menu = menuService.detail(menuId);
+            return RespEntity.ok(menu);
+        } catch (Exception e) {
+            return RespEntity.error(e.getMessage());
+        }
+    }
+
+    private Menu menu(Integer parentId, String menuName, String url, String perms,
+                      String icon, String type, Integer orderBy) {
         Menu menu = new Menu();
         menu.setParentId(parentId);
         menu.setMenuName(menuName);

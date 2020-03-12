@@ -1,5 +1,8 @@
 package com.study.service.impl;
 
+import com.study.common.entity.Key;
+import com.study.common.entity.PageEntity;
+import com.study.common.entity.PageUtil;
 import com.study.common.entity.RespEntity;
 import com.study.repository.dao.generate.RoleMapper;
 import com.study.repository.dao.generate.RoleMenuMapper;
@@ -8,13 +11,13 @@ import com.study.repository.entity.generate.*;
 import com.study.service.RoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author chenglutao
@@ -45,24 +48,20 @@ public class RoleServiceImpl implements RoleService {
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {Exception.class})
-    public void add(Role role, List<Integer> menuIds) {
+    public void add(Role role, String menuIds) {
         roleMapper.insertSelective(role);
-        for (Integer menuId : menuIds) {
-            RoleMenu roleMenu = new RoleMenu();
-            roleMenu.setRoleId(role.getId());
-            roleMenu.setMenuId(menuId);
-            roleMenuMapper.insert(roleMenu);
-        }
+        addRoleMenu(role.getId(), menuIds);
     }
 
     @Override
     @Transactional(propagation = Propagation.REQUIRED, rollbackFor = {Exception.class})
-    public void update(Role role, List<Integer> menuIds) {
+    public void update(Role role, String menuIds) {
         roleMapper.updateByPrimaryKeySelective(role);
         RoleMenuExample example = new RoleMenuExample();
         RoleMenuExample.Criteria criteria = example.createCriteria();
         criteria.andRoleIdEqualTo(role.getId());
         roleMenuMapper.deleteByExample(example);
+        addRoleMenu(role.getId(), menuIds);
     }
 
     @Override
@@ -94,5 +93,38 @@ public class RoleServiceImpl implements RoleService {
         } else {
             return null;
         }
+    }
+
+    @Override
+    public PageEntity<Role> page(String roleName, String pageSize, String pageNum) {
+        PageEntity<Role> pageEntity = new PageEntity<Role>(null, 0);
+        Map<String, Object> pageMap = new HashMap<String, Object>();
+        pageMap.put("pageSize", pageSize);
+        pageMap.put("curPage", pageNum);
+        RoleExample example = new RoleExample();
+        RoleExample.Criteria criteria = example.createCriteria();
+        if (StringUtils.isNotBlank(roleName)){
+            criteria.andNameEqualTo(roleName);
+        }
+        example.setOrderByClause("order_by asc");
+        int total = roleMapper.countByExample(example);
+        List<Role> roleList = roleMapper.selectByExampleWithRowbounds(example, PageUtil.getRowBounds(pageMap));
+        if (CollectionUtils.isNotEmpty(roleList)) {
+            pageEntity.setTotal(total);
+            pageEntity.setKey(Key.OK);
+            pageEntity.setMsg("查询成功");
+            pageEntity.setData(roleList);
+        }
+        return pageEntity;
+    }
+
+    public void addRoleMenu(Integer roleId, String menuIds) {
+        String[] menu = menuIds.split(",");
+        Arrays.stream(menu).forEach(menuId -> {
+            RoleMenu roleMenu = new RoleMenu();
+            roleMenu.setRoleId(roleId);
+            roleMenu.setMenuId(Integer.valueOf(menuId));
+            roleMenuMapper.insert(roleMenu);
+        });
     }
 }

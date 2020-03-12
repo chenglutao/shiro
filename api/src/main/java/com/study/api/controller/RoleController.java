@@ -36,11 +36,24 @@ public class RoleController extends BaseController {
         }
     }
 
+    @PostMapping("page")
+    @RequiresPermissions("role:view")
+    public Object page(@RequestParam(value = "roleName", required = false) String roleName,
+                       @RequestParam(value = "pageSize", required = false) String pageSize,
+                       @RequestParam(value = "pageNum", required = false) String pageNum){
+        try{
+            return roleService.page(roleName, pageSize, pageNum);
+        } catch (Exception e) {
+            return RespEntity.error(e.getMessage());
+        }
+
+    }
+
     @PostMapping("add")
     @RequiresPermissions("role:add")
     public Object add(@RequestParam(value = "roleName", required = true) String roleName,
                       @RequestParam(value = "remark", required = false) String remark,
-                      @RequestParam(value = "menuIds", required = true)  List<Integer> menuIds){
+                      @RequestParam(value = "menuIds", required = true) String menuIds){
         try {
             Role role = new Role();
             role.setName(roleName);
@@ -58,7 +71,7 @@ public class RoleController extends BaseController {
     public Object update(@RequestParam(value = "roleName", required = true) String roleName,
                          @RequestParam(value = "remark", required = false) String remark,
                          @RequestParam(value = "id", required = true) Integer id,
-                         @RequestParam(value = "menuIds", required = true)  List<Integer> menuIds){
+                         @RequestParam(value = "menuIds", required = true) String menuIds){
         try {
             Role role = new Role();
             role.setId(id);
@@ -75,7 +88,7 @@ public class RoleController extends BaseController {
 
     @PostMapping({"delete/roleIds"})
     @RequiresPermissions("role:delete")
-    public Object delete(String roleIds){
+    public Object delete(@PathVariable String roleIds){
         try {
             roleService.delete(roleIds);
             clearCache();
@@ -85,13 +98,12 @@ public class RoleController extends BaseController {
         }
     }
 
-    @GetMapping({"detail"})
-    @RequiresPermissions("role:view")
-    public Object detail(String roleId){
+    @PostMapping({"detail"})
+    @RequiresPermissions("role:detail")
+    public Object detail(@RequestParam(value = "roleId", required = true) String roleId){
         try {
-            roleService.detail(roleId);
-            new MyShiroRealm().clearCache();
-            return RespEntity.ok();
+            Role role = roleService.detail(roleId);
+            return RespEntity.ok(role);
         } catch (Exception e) {
             return RespEntity.error(e.getMessage());
         }

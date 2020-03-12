@@ -11,7 +11,7 @@
  Target Server Version : 50728
  File Encoding         : 65001
 
- Date: 28/12/2019 00:00:40
+ Date: 12/03/2020 17:08:36
 */
 
 SET NAMES utf8mb4;
@@ -45,7 +45,7 @@ CREATE TABLE `login_log`  (
   `location` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT '登录地点',
   `ip` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci NULL DEFAULT NULL COMMENT 'ip地址',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 5 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 18 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of login_log
@@ -54,6 +54,19 @@ INSERT INTO `login_log` VALUES (1, 'admin', '2019-12-27 23:48:56', '', '0:0:0:0:
 INSERT INTO `login_log` VALUES (2, 'admin', '2019-12-27 23:49:41', '', '127.0.0.1');
 INSERT INTO `login_log` VALUES (3, 'admin', '2019-12-27 23:55:31', '', '127.0.0.1');
 INSERT INTO `login_log` VALUES (4, 'admin', '2019-12-27 23:58:04', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (5, 'admin', '2020-03-10 18:14:13', '', '0:0:0:0:0:0:0:1');
+INSERT INTO `login_log` VALUES (6, 'admin', '2020-03-10 18:17:04', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (7, 'admin', '2020-03-10 18:20:27', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (8, 'admin', '2020-03-10 18:22:37', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (9, 'admin', '2020-03-10 18:28:49', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (10, 'admin', '2020-03-10 18:32:37', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (11, 'admin', '2020-03-11 09:55:59', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (12, 'admin', '2020-03-11 09:59:02', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (13, 'admin', '2020-03-11 17:47:43', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (14, 'admin', '2020-03-11 18:01:20', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (15, 'admin', '2020-03-11 18:02:46', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (16, 'admin', '2020-03-11 18:03:17', '', '127.0.0.1');
+INSERT INTO `login_log` VALUES (17, 'admin', '2020-03-12 11:41:33', '', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for menu
@@ -71,12 +84,15 @@ CREATE TABLE `menu`  (
   `create_time` datetime(0) NULL DEFAULT NULL COMMENT '创建时间',
   `modify_time` datetime(0) NULL DEFAULT NULL COMMENT '修改时间',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '菜单表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 7 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '菜单表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of menu
 -- ----------------------------
-INSERT INTO `menu` VALUES (1, 0, '系统管理', NULL, NULL, NULL, '0', 1, '2019-12-27 20:55:57', NULL);
+INSERT INTO `menu` VALUES (1, 0, '系统管理', NULL, '', NULL, '0', 1, '2019-12-27 20:55:57', NULL);
+INSERT INTO `menu` VALUES (2, 1, '角色管理', '/role', 'role:view', '', '0', 1, '2020-03-11 18:03:33', NULL);
+INSERT INTO `menu` VALUES (3, 1, '菜单管理', '/menu', 'menu:view', '', '0', 2, '2020-03-11 18:07:56', NULL);
+INSERT INTO `menu` VALUES (4, 1, '用户管理', '/user', 'user:view', '', '0', 3, '2020-03-11 18:13:57', NULL);
 
 -- ----------------------------
 -- Table structure for role
@@ -106,12 +122,15 @@ CREATE TABLE `role_menu`  (
   `role_id` int(11) NULL DEFAULT NULL COMMENT '角色ID',
   `menu_id` int(11) NULL DEFAULT NULL COMMENT '菜单/按钮ID',
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色菜单关联表' ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_general_ci COMMENT = '角色菜单关联表' ROW_FORMAT = Dynamic;
 
 -- ----------------------------
 -- Records of role_menu
 -- ----------------------------
 INSERT INTO `role_menu` VALUES (1, 1, 1);
+INSERT INTO `role_menu` VALUES (2, 1, 2);
+INSERT INTO `role_menu` VALUES (3, 1, 3);
+INSERT INTO `role_menu` VALUES (4, 1, 4);
 
 -- ----------------------------
 -- Table structure for user
@@ -134,7 +153,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', '038bdaf98f2037b31f1e75b5b4c9b26e', 1, NULL, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO `user` VALUES (1, 'admin', '038bdaf98f2037b31f1e75b5b4c9b26e', 1, 'it_c@163.com', '18813024889', '2020-03-11 17:43:57', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for user_role

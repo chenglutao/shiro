@@ -1,7 +1,6 @@
 package com.study.service;
 
 import com.study.repository.entity.generate.Permission;
-import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 

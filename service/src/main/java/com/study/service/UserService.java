@@ -1,6 +1,6 @@
 package com.study.service;
 
-import com.study.repository.entity.generate.Role;
+import com.study.common.entity.RespEntity;
 import com.study.repository.entity.generate.User;
 
 import java.util.List;
@@ -15,7 +15,15 @@ public interface UserService {
 
     List<User> list();
 
-    void add(User user, List<Integer> roleIds);
+    RespEntity add(User user, String roleIds);
 
-    void update(User user);
+    void update(User user, String roleIds);
+
+    User detail(String userId);
+
+    void delete(String userIds);
+
+    void passwordUpdate(Integer userId, String newPassword);
+
+    void passwordReset(String userName, String password);
 }
