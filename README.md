@@ -3,14 +3,21 @@
 
 ### 技术选型
 Spring Boot 2.2.0.RELEASE
+
 MyBatis 1.3.2
+
 Shiro 1.4.2
+
 Shiro-Redis 3.2.3
+
 Swagger 2.9.2
+
 
 ### 开发环境
 JDK 1.8
+
 IDE IDEA 2019.2
+
 Mysql 5.7.28
 
 ### 鸣谢
