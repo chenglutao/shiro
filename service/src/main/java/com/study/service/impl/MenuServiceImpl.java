@@ -42,7 +42,6 @@ public class MenuServiceImpl implements MenuService {
     @Override
     public List<Menu> list() {
         MenuExample example = new MenuExample();
-        MenuExample.Criteria criteria = example.createCriteria();
         example.setOrderByClause("id ASC");
         List<Menu> menuList = menuMapper.selectByExample(example);
         return menuList;
@@ -63,8 +62,9 @@ public class MenuServiceImpl implements MenuService {
     @Transactional(propagation = Propagation.SUPPORTS, readOnly = true, rollbackFor = Exception.class)
     public RespEntity delete(String menuId) {
         Menu menu = menuMapper.selectByPrimaryKey(Integer.valueOf(menuId));
-        if (menu != null)
-            return RespEntity.error("资源存在子资源，不允许删除!");
+        if (menu != null) {
+            return RespEntity.error("菜单存在子菜单，不允许删除!");
+        }
         menuMapper.deleteByPrimaryKey(Integer.valueOf(menuId));
         RoleMenuExample example = new RoleMenuExample();
         RoleMenuExample.Criteria criteria = example.createCriteria();

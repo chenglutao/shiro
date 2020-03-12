@@ -7,11 +7,9 @@ import com.study.service.RoleService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -21,13 +19,15 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("role")
-public class RoleController {
+public class RoleController extends BaseController {
 
     @Autowired
     private RoleService roleService;
+    @Autowired
+    private MyShiroRealm myShiroRealm;
 
     @GetMapping("list")
-    public Object list(){
+    public Object list() {
         try {
             List<Role> list =  roleService.list();
             return RespEntity.ok(list);
@@ -38,9 +38,15 @@ public class RoleController {
 
     @PostMapping("add")
     @RequiresPermissions("role:add")
-    public Object add(Role role){
+    public Object add(@RequestParam(value = "roleName", required = true) String roleName,
+                      @RequestParam(value = "remark", required = false) String remark,
+                      @RequestParam(value = "menuIds", required = true)  List<Integer> menuIds){
         try {
-            roleService.add(role);
+            Role role = new Role();
+            role.setName(roleName);
+            role.setRemark(remark);
+            role.setCreateTime(new Date());
+            roleService.add(role, menuIds);
             return RespEntity.ok();
         } catch (Exception e) {
             return RespEntity.error(e.getMessage());
@@ -49,10 +55,18 @@ public class RoleController {
 
     @PostMapping("update")
     @RequiresPermissions("role:update")
-    public Object update(Role role){
+    public Object update(@RequestParam(value = "roleName", required = true) String roleName,
+                         @RequestParam(value = "remark", required = false) String remark,
+                         @RequestParam(value = "id", required = true) Integer id,
+                         @RequestParam(value = "menuIds", required = true)  List<Integer> menuIds){
         try {
-            roleService.update(role);
-            new MyShiroRealm().clearCache();
+            Role role = new Role();
+            role.setId(id);
+            role.setName(roleName);
+            role.setRemark(remark);
+            role.setModifyTime(new Date());
+            roleService.update(role, menuIds);
+            clearCache();
             return RespEntity.ok();
         } catch (Exception e) {
             return RespEntity.error(e.getMessage());
@@ -64,6 +78,18 @@ public class RoleController {
     public Object delete(String roleIds){
         try {
             roleService.delete(roleIds);
+            clearCache();
+            return RespEntity.ok();
+        } catch (Exception e) {
+            return RespEntity.error(e.getMessage());
+        }
+    }
+
+    @GetMapping({"detail"})
+    @RequiresPermissions("role:view")
+    public Object detail(String roleId){
+        try {
+            roleService.detail(roleId);
             new MyShiroRealm().clearCache();
             return RespEntity.ok();
         } catch (Exception e) {

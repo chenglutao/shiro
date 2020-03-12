@@ -149,25 +149,6 @@
                 <version>${javax.servlet-api.version}</version>
                 <scope>provided</scope>
             </dependency>
-
-            <!-- logger begin -->
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-core</artifactId>
-                <version>${log4j2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-slf4j-impl</artifactId>
-                <version>${log4j2.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.logging.log4j</groupId>
-                <artifactId>log4j-jcl</artifactId>
-                <version>${log4j2.version}</version>
-            </dependency>
-            <!-- logger end -->
-
             <!-- shiro -->
             <dependency>
                 <groupId>org.apache.shiro</groupId>
@@ -237,7 +218,7 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <jdbc.url><![CDATA[jdbc:mysql://127.0.0.1:3306/shiro]]></jdbc.url>
+                <jdbc.url><![CDATA[jdbc:mysql://127.0.0.1:3306/shiro?useUnicode=true&characterEncoding=utf8&useSSL=false&&roundRobinLoadBalance=true&allowMultiQueries=true]]></jdbc.url>
                 <jdbc.username>root</jdbc.username>
                 <jdbc.password>123456</jdbc.password>
                 <datasource.initialSize>1</datasource.initialSize>
@@ -250,7 +231,7 @@
             <!-- 线上测试环境 -->
             <id>online-test</id>
             <properties>
-                <jdbc.url><![CDATA[jdbc:mysql://127.0.0.1:3306/shiro]]></jdbc.url>
+                <jdbc.url><![CDATA[jdbc:mysql://127.0.0.1:3306/shiro?useUnicode=true&characterEncoding=utf8&useSSL=false&&roundRobinLoadBalance=true&allowMultiQueries=true]]></jdbc.url>
                 <jdbc.username>root</jdbc.username>
                 <jdbc.password>123456</jdbc.password>
                 <datasource.initialSize>1</datasource.initialSize>
@@ -263,7 +244,7 @@
             <!-- 生产环境 -->
             <id>production</id>
             <properties>
-                <jdbc.url><![CDATA[jdbc:mysql://127.0.0.1:3306/shiro]]></jdbc.url>
+                <jdbc.url><![CDATA[jdbc:mysql://127.0.0.1:3306/shiro?useUnicode=true&characterEncoding=utf8&useSSL=false&&roundRobinLoadBalance=true&allowMultiQueries=true]]></jdbc.url>
                 <jdbc.username>root</jdbc.username>
                 <jdbc.password>123456</jdbc.password>
                 <datasource.initialSize>10</datasource.initialSize>

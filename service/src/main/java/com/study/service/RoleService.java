@@ -15,9 +15,11 @@ public interface RoleService {
 
     List<Role> list();
 
-    void add(Role role);
+    void add(Role role, List<Integer> menuIds);
 
-    void update(Role role);
+    void update(Role role, List<Integer> menuIds);
 
     RespEntity delete(String roleIds);
+
+    Role detail(String roleId);
 }

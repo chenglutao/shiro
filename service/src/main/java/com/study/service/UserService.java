@@ -1,6 +1,9 @@
 package com.study.service;
 
+import com.study.repository.entity.generate.Role;
 import com.study.repository.entity.generate.User;
+
+import java.util.List;
 
 /**
  * @author chenglutao
@@ -9,4 +12,10 @@ import com.study.repository.entity.generate.User;
 public interface UserService {
 
     User getName(String userName);
+
+    List<User> list();
+
+    void add(User user, List<Integer> roleIds);
+
+    void update(User user);
 }

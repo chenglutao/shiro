@@ -57,11 +57,11 @@ public class IpUtils {
     public static String getCityInfo(String ip){
         DbSearcher searcher = null;
         try {
-            String dbPath = IpUtils.class.getResource("ip2region.db").getPath();
+            String dbPath = IpUtils.class.getResource("/ip2region.db").getPath();
             File file = new File(dbPath);
             if (!file.exists()) {
                 String tmpDir = System.getProperties().getProperty("java.io.tmpdir");
-                dbPath = tmpDir + "ip.db";
+                dbPath = tmpDir + File.separator + "ip.db";
                 file = new File(dbPath);
                 InputStream resourceAsStream = IpUtils.class.getClassLoader().getResourceAsStream("classpath:ip2region.db");
                 if (resourceAsStream != null) {

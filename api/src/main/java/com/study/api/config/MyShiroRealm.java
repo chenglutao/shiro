@@ -16,6 +16,7 @@ import org.apache.shiro.realm.AuthorizingRealm;
 import org.apache.shiro.subject.PrincipalCollection;
 import org.apache.shiro.util.ByteSource;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 import java.util.Set;
@@ -80,8 +81,13 @@ public class MyShiroRealm extends AuthorizingRealm {
         super.clearCache(principals);
     }
 
+    public static String simpleHash(String userName, String password) {
+       return new SimpleHash("MD5", password, ByteSource.Util.bytes(userName), 1024).toHex();
+    }
+
     public static void main(String[] args) {
-        String result = new SimpleHash("MD5", "123456", ByteSource.Util.bytes("admin"), 1024).toHex();
-        System.out.println(result);
+        //String result = simpleHash("admin", "123456");
+        String result1 = new SimpleHash("MD5", "123456", ByteSource.Util.bytes("admin"), 1024).toHex();
+        System.out.println("  "+result1);
     }
 }
