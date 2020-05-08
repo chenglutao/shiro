@@ -13,7 +13,6 @@ import java.util.Map;
 
 /**
  * @author chenglutao
- * @date 2019-12-19 17:25
  */
 public class MyExceptionHandler implements HandlerExceptionResolver {
     @Override

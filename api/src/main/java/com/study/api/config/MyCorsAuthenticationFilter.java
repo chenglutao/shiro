@@ -11,7 +11,6 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * @author chenglutao
- * @date 2019-12-19 16:11
  */
 public class MyCorsAuthenticationFilter extends BasicHttpAuthenticationFilter {
 

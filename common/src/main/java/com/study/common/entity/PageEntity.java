@@ -4,7 +4,6 @@ import java.util.List;
 
 /**
  * @author chenglutao
- * @date 2019-12-20 11:34
  */
 public class PageEntity<T> extends RespEntity<List<T>> {
     private long total;

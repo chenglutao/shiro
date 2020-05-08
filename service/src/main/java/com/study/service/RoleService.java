@@ -8,7 +8,6 @@ import java.util.List;
 
 /**
  * @author chenglutao
- * @date 2019-12-19 16:52
  */
 public interface RoleService {
 

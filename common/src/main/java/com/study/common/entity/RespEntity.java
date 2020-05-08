@@ -2,7 +2,6 @@ package com.study.common.entity;
 
 /**
  * @author chenglutao
- * @date 2019-12-20 11:34
  */
 public class RespEntity<T> {
 

@@ -7,7 +7,6 @@ import org.springframework.context.ApplicationContextAware;
 
 /**
  * @author chenglutao
- * @date 2019-12-10 15:37
  */
 public class SpringContextUtils implements ApplicationContextAware {
 

@@ -4,7 +4,6 @@ import com.study.common.entity.Key;
 
 /**
  * @author chenglutao
- * @date 2019-12-20 10:24
  */
 
 public class BusinessException extends RuntimeException {

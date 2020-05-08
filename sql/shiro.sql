@@ -11,7 +11,7 @@
  Target Server Version : 50728
  File Encoding         : 65001
 
- Date: 12/03/2020 17:08:36
+ Date: 14/03/2020 17:08:36
 */
 
 SET NAMES utf8mb4;
@@ -50,23 +50,6 @@ CREATE TABLE `login_log`  (
 -- ----------------------------
 -- Records of login_log
 -- ----------------------------
-INSERT INTO `login_log` VALUES (1, 'admin', '2019-12-27 23:48:56', '', '0:0:0:0:0:0:0:1');
-INSERT INTO `login_log` VALUES (2, 'admin', '2019-12-27 23:49:41', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (3, 'admin', '2019-12-27 23:55:31', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (4, 'admin', '2019-12-27 23:58:04', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (5, 'admin', '2020-03-10 18:14:13', '', '0:0:0:0:0:0:0:1');
-INSERT INTO `login_log` VALUES (6, 'admin', '2020-03-10 18:17:04', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (7, 'admin', '2020-03-10 18:20:27', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (8, 'admin', '2020-03-10 18:22:37', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (9, 'admin', '2020-03-10 18:28:49', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (10, 'admin', '2020-03-10 18:32:37', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (11, 'admin', '2020-03-11 09:55:59', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (12, 'admin', '2020-03-11 09:59:02', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (13, 'admin', '2020-03-11 17:47:43', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (14, 'admin', '2020-03-11 18:01:20', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (15, 'admin', '2020-03-11 18:02:46', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (16, 'admin', '2020-03-11 18:03:17', '', '127.0.0.1');
-INSERT INTO `login_log` VALUES (17, 'admin', '2020-03-12 11:41:33', '', '127.0.0.1');
 
 -- ----------------------------
 -- Table structure for menu
@@ -89,10 +72,10 @@ CREATE TABLE `menu`  (
 -- ----------------------------
 -- Records of menu
 -- ----------------------------
-INSERT INTO `menu` VALUES (1, 0, '系统管理', NULL, '', NULL, '0', 1, '2019-12-27 20:55:57', NULL);
-INSERT INTO `menu` VALUES (2, 1, '角色管理', '/role', 'role:view', '', '0', 1, '2020-03-11 18:03:33', NULL);
-INSERT INTO `menu` VALUES (3, 1, '菜单管理', '/menu', 'menu:view', '', '0', 2, '2020-03-11 18:07:56', NULL);
-INSERT INTO `menu` VALUES (4, 1, '用户管理', '/user', 'user:view', '', '0', 3, '2020-03-11 18:13:57', NULL);
+INSERT INTO `menu` VALUES (1, 0, '系统管理', NULL, '', NULL, '0', 1, '2020-03-14 20:55:57', NULL);
+INSERT INTO `menu` VALUES (2, 1, '角色管理', '/role', 'role:view', '', '0', 1, '2020-03-15 18:03:33', NULL);
+INSERT INTO `menu` VALUES (3, 1, '菜单管理', '/menu', 'menu:view', '', '0', 2, '2020-03-15 18:07:56', NULL);
+INSERT INTO `menu` VALUES (4, 1, '用户管理', '/user', 'user:view', '', '0', 3, '2020-03-15 18:13:57', NULL);
 
 -- ----------------------------
 -- Table structure for role
@@ -110,8 +93,8 @@ CREATE TABLE `role`  (
 -- ----------------------------
 -- Records of role
 -- ----------------------------
-INSERT INTO `role` VALUES (1, '系统管理员', '系统管理员，拥有所有操作权限 ^_^', '2019-12-27 17:53:29', NULL);
-INSERT INTO `role` VALUES (2, '普通用户', '拥有查询权限', '2019-12-27 17:54:08', NULL);
+INSERT INTO `role` VALUES (1, '系统管理员', '系统管理员，拥有所有操作权限 ^_^', '2020-03-15 17:53:29', NULL);
+INSERT INTO `role` VALUES (2, '普通用户', '拥有查询权限', '2020-03-15 17:54:08', NULL);
 
 -- ----------------------------
 -- Table structure for role_menu
@@ -153,7 +136,7 @@ CREATE TABLE `user`  (
 -- ----------------------------
 -- Records of user
 -- ----------------------------
-INSERT INTO `user` VALUES (1, 'admin', '038bdaf98f2037b31f1e75b5b4c9b26e', 1, 'it_c@163.com', '18813024889', '2020-03-11 17:43:57', NULL, NULL, NULL);
+INSERT INTO `user` VALUES (1, 'admin', '038bdaf98f2037b31f1e75b5b4c9b26e', 1, 'it_c@163.com', '18813024889', '2020-03-15 17:43:57', NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for user_role

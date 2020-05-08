@@ -10,7 +10,6 @@ import org.springframework.web.filter.CorsFilter;
 
 /**
  * @author chenglutao
- * @date 2019-12-19 15:55
  */
 @Slf4j
 @Configuration

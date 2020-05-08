@@ -21,7 +21,6 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author chenglutao
- * @date 2019-12-20 9:48
  */
 @Slf4j
 @RestController

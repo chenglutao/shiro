@@ -23,7 +23,6 @@ import java.util.stream.Collectors;
 
 /**
  * @author chenglutao
- * @date 2019-12-19 14:56
  */
 @Slf4j
 public class MyShiroRealm extends AuthorizingRealm {

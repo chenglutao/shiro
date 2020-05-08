@@ -28,7 +28,6 @@ import java.util.*;
 
 /**
  * @author chenglutao
- * @date 2019-12-19 14:24
  */
 @Configuration
 public class ShiroConfig {
