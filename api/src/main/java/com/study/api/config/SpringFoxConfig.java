@@ -20,10 +20,10 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 public class SpringFoxConfig {
 
     @Bean
-    public Docket docket(Environment environment){
+    public Docket docket(Environment environment) {
 
         //设置要显示swagger环境
-        Profiles profiles = Profiles.of("test");
+        Profiles profiles = Profiles.of("production");
         boolean flag = environment.acceptsProfiles(profiles);
 
         return new Docket(DocumentationType.SWAGGER_2)
@@ -37,7 +37,7 @@ public class SpringFoxConfig {
                 .build();
     }
 
-    private ApiInfo apiInfo(){
+    private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
                 .title("Swagger API Document")
                 .description("API Document")

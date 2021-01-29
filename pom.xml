@@ -244,12 +244,12 @@
             <!-- 生产环境 -->
             <id>production</id>
             <properties>
-                <jdbc.url><![CDATA[jdbc:mysql://127.0.0.1:3306/shiro?useUnicode=true&characterEncoding=utf8&useSSL=false&&roundRobinLoadBalance=true&allowMultiQueries=true]]></jdbc.url>
-                <jdbc.username>root</jdbc.username>
+                <jdbc.url><![CDATA[jdbc:mysql://49.233.31.28:3306/shiro?useUnicode=true&characterEncoding=utf8&useSSL=false&&roundRobinLoadBalance=true&allowMultiQueries=true]]></jdbc.url>
+                <jdbc.username>shiro</jdbc.username>
                 <jdbc.password>123456</jdbc.password>
-                <datasource.initialSize>10</datasource.initialSize>
-                <datasource.minIdle>10</datasource.minIdle>
-                <datasource.maxActive>100</datasource.maxActive>
+                <datasource.initialSize>1</datasource.initialSize>
+                <datasource.minIdle>1</datasource.minIdle>
+                <datasource.maxActive>8</datasource.maxActive>
             </properties>
         </profile>
     </profiles>

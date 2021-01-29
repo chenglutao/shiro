@@ -76,7 +76,15 @@ public class ShiroConfig {
         shiroFilterFactoryBean.setUnauthorizedUrl("/unauthorized");
 
         LinkedHashMap<String, String> filterChainDefinitionMap = new LinkedHashMap<String, String>();
+        filterChainDefinitionMap.put("/logout", "logout");
+        filterChainDefinitionMap.put("/login", "anon");
+
+        filterChainDefinitionMap.put("/febs/**", "anon");
+        filterChainDefinitionMap.put("/layui/**", "anon");
+
         filterChainDefinitionMap.put("/test", "anon");
+
+        filterChainDefinitionMap.put("/images/captcha", "anon");
         filterChainDefinitionMap.put("/swagger/**", "anon");
         filterChainDefinitionMap.put("/v2/api-docs", "anon");
         filterChainDefinitionMap.put("/swagger-ui.html", "anon");
@@ -84,9 +92,10 @@ public class ShiroConfig {
         filterChainDefinitionMap.put("/swagger-resources/**", "anon");
         filterChainDefinitionMap.put("/statics/**", "anon");
         filterChainDefinitionMap.put("/druid/**", "anon");
-        filterChainDefinitionMap.put("/login", "anon");
+
+        filterChainDefinitionMap.put("/", "anon");
         filterChainDefinitionMap.put("/**", "authc");
-        filterChainDefinitionMap.put("/logout", "logout");
+
         shiroFilterFactoryBean.setFilterChainDefinitionMap(filterChainDefinitionMap);
         //自定义过滤器
         Map<String, Filter> filterMap = new LinkedHashMap<>();

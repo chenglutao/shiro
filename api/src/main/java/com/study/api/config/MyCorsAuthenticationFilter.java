@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
  * @author chenglutao
  */
 public class MyCorsAuthenticationFilter extends BasicHttpAuthenticationFilter {
-    
+
     @Override
     protected boolean isAccessAllowed(ServletRequest request, ServletResponse response, Object mappedValue) {
         if (request instanceof HttpServletRequest) {

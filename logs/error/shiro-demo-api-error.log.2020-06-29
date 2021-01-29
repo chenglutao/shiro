@@ -1,0 +1,25 @@
+ERROR 2020-06-29 11:54:25,813 [main] o.s.b.diagnostics.LoggingFailureAnalysisReporter > 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.druid.max-active' to int:
+
+    Property: spring.datasource.druid.max-active
+    Value: @datasource.maxActive@
+    Origin: class path resource [application.properties]:9:36
+    Reason: failed to convert java.lang.String to int
+
+Action:
+
+Update your application's configuration
+
+ERROR 2020-06-29 12:00:33,119 [http-nio-9000-exec-3] com.study.common.util.IpUtils > Error: Invalid ip address
+ERROR 2020-06-29 12:00:33,121 [http-nio-9000-exec-3] com.study.common.util.IpUtils > 获取地址信息异常，null
+ERROR 2020-06-29 14:55:50,086 [http-nio-9000-exec-1] com.study.common.util.IpUtils > Error: Invalid ip address
+ERROR 2020-06-29 14:55:50,089 [http-nio-9000-exec-1] com.study.common.util.IpUtils > 获取地址信息异常，null
+ERROR 2020-06-29 16:02:25,529 [http-nio-9000-exec-7] com.study.common.util.IpUtils > Error: Invalid ip address
+ERROR 2020-06-29 16:02:25,532 [http-nio-9000-exec-7] com.study.common.util.IpUtils > 获取地址信息异常，null

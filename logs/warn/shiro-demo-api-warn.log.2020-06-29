@@ -1,0 +1,117 @@
+WARN  2020-06-29 11:54:25,782 [main] o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext > Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'shiroFilter' defined in class path resource [com/study/api/config/ShiroConfig.class]: BeanPostProcessor before instantiation of bean failed; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'authorizationAttributeSourceAdvisor' defined in class path resource [com/study/api/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'authorizationAttributeSourceAdvisor' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'securityManager' defined in class path resource [com/study/api/config/ShiroConfig.class]: Unsatisfied dependency expressed through method 'securityManager' parameter 0; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'myShiroRealm': Unsatisfied dependency expressed through field 'userService'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userServiceImpl': Unsatisfied dependency expressed through field 'userMapper'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'userMapper' defined in file [G:\GitCode\shiro\repository\target\classes\com\study\repository\dao\generate\UserMapper.class]: Unsatisfied dependency expressed through bean property 'sqlSessionFactory'; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'sqlSessionFactory' defined in class path resource [org/mybatis/spring/boot/autoconfigure/MybatisAutoConfiguration.class]: Unsatisfied dependency expressed through method 'sqlSessionFactory' parameter 0; nested exception is org.springframework.boot.context.properties.ConfigurationPropertiesBindException: Error creating bean with name 'dataSource': Could not bind properties to 'DataSource' : prefix=spring.datasource.druid, ignoreInvalidFields=false, ignoreUnknownFields=true; nested exception is org.springframework.boot.context.properties.bind.BindException: Failed to bind properties under 'spring.datasource.druid.max-active' to int
+ERROR 2020-06-29 11:54:25,813 [main] o.s.b.diagnostics.LoggingFailureAnalysisReporter > 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Failed to bind properties under 'spring.datasource.druid.max-active' to int:
+
+    Property: spring.datasource.druid.max-active
+    Value: @datasource.maxActive@
+    Origin: class path resource [application.properties]:9:36
+    Reason: failed to convert java.lang.String to int
+
+Action:
+
+Update your application's configuration
+
+ERROR 2020-06-29 12:00:33,119 [http-nio-9000-exec-3] com.study.common.util.IpUtils > Error: Invalid ip address
+ERROR 2020-06-29 12:00:33,121 [http-nio-9000-exec-3] com.study.common.util.IpUtils > 获取地址信息异常，null
+WARN  2020-06-29 12:02:57,446 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:02:59,783 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:03:38,870 [http-nio-9000-exec-5] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:03:38,989 [http-nio-9000-exec-7] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:05:05,782 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:05:06,178 [http-nio-9000-exec-9] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:05:33,338 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:06:13,492 [http-nio-9000-exec-7] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:07:17,451 [http-nio-9000-exec-5] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:14:35,496 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:14:35,781 [http-nio-9000-exec-4] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:14:44,186 [http-nio-9000-exec-6] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:14:44,336 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:19:55,300 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:19:55,556 [http-nio-9000-exec-3] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:21:31,555 [http-nio-9000-exec-7] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:21:31,691 [http-nio-9000-exec-9] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:21:36,684 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:21:36,827 [http-nio-9000-exec-3] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:22:30,405 [http-nio-9000-exec-6] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:22:30,547 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:27:49,049 [http-nio-9000-exec-3] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 12:27:50,075 [http-nio-9000-exec-5] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:18:50,680 [http-nio-9000-exec-5] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:18:50,796 [http-nio-9000-exec-7] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:18:56,966 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:18:57,087 [http-nio-9000-exec-9] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:19:01,424 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:19:01,557 [http-nio-9000-exec-5] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:44:06,345 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:44:06,640 [http-nio-9000-exec-4] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:44:13,867 [http-nio-9000-exec-6] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:44:16,033 [http-nio-9000-exec-10] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:44:17,914 [http-nio-9000-exec-9] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:44:18,091 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:44:19,270 [http-nio-9000-exec-4] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:44:35,496 [http-nio-9000-exec-7] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:44:35,642 [http-nio-9000-exec-10] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 13:54:13,192 [http-nio-9000-exec-4] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:02:52,063 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:02:52,346 [http-nio-9000-exec-3] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:02:57,826 [http-nio-9000-exec-5] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:02:59,111 [http-nio-9000-exec-7] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:03:03,077 [http-nio-9000-exec-10] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:03:03,195 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:05:04,633 [http-nio-9000-exec-6] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:05:04,763 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:06:08,522 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:06:08,745 [http-nio-9000-exec-4] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:20:03,762 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:20:11,964 [http-nio-9000-exec-3] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:22:32,648 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:22:33,973 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:22:37,121 [http-nio-9000-exec-3] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:39:29,264 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:41:53,400 [main] org.thymeleaf.templatemode.TemplateMode > [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+WARN  2020-06-29 14:43:07,245 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:43:08,560 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:43:09,478 [http-nio-9000-exec-3] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:48:39,855 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+ERROR 2020-06-29 14:55:50,086 [http-nio-9000-exec-1] com.study.common.util.IpUtils > Error: Invalid ip address
+ERROR 2020-06-29 14:55:50,089 [http-nio-9000-exec-1] com.study.common.util.IpUtils > 获取地址信息异常，null
+WARN  2020-06-29 14:56:47,342 [http-nio-9000-exec-3] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'POST' not supported]
+WARN  2020-06-29 14:56:54,490 [http-nio-9000-exec-6] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:56:58,162 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:58:43,870 [http-nio-9000-exec-4] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 14:58:52,515 [http-nio-9000-exec-6] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:18:21,482 [main] org.thymeleaf.templatemode.TemplateMode > [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+WARN  2020-06-29 15:19:23,111 [main] org.thymeleaf.templatemode.TemplateMode > [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+WARN  2020-06-29 15:21:57,420 [main] org.thymeleaf.templatemode.TemplateMode > [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+WARN  2020-06-29 15:22:04,114 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:04,392 [http-nio-9000-exec-9] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:04,426 [http-nio-9000-exec-10] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:04,457 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:04,747 [http-nio-9000-exec-2] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:13,938 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:13,968 [http-nio-9000-exec-9] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:13,997 [http-nio-9000-exec-10] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:14,025 [http-nio-9000-exec-1] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:14,595 [http-nio-9000-exec-6] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:14,620 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:14,641 [http-nio-9000-exec-9] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:14,665 [http-nio-9000-exec-10] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:22:14,965 [http-nio-9000-exec-3] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:24:14,571 [main] org.thymeleaf.templatemode.TemplateMode > [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+WARN  2020-06-29 15:25:14,326 [http-nio-9000-exec-7] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:25:26,650 [http-nio-9000-exec-10] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 15:56:28,897 [main] org.thymeleaf.templatemode.TemplateMode > [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+WARN  2020-06-29 15:58:14,066 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 16:01:12,062 [main] org.thymeleaf.templatemode.TemplateMode > [THYMELEAF][main] Template Mode 'LEGACYHTML5' is deprecated. Using Template Mode 'HTML' instead.
+WARN  2020-06-29 16:02:13,665 [http-nio-9000-exec-6] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+ERROR 2020-06-29 16:02:25,529 [http-nio-9000-exec-7] com.study.common.util.IpUtils > Error: Invalid ip address
+ERROR 2020-06-29 16:02:25,532 [http-nio-9000-exec-7] com.study.common.util.IpUtils > 获取地址信息异常，null
+WARN  2020-06-29 16:02:28,665 [http-nio-9000-exec-8] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]
+WARN  2020-06-29 16:02:35,436 [http-nio-9000-exec-10] o.s.w.s.m.support.DefaultHandlerExceptionResolver > Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' not supported]

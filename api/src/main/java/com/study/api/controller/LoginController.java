@@ -35,7 +35,6 @@ public class LoginController {
         return RespEntity.ok();
     }
 
-
     @ApiOperation(value = "登录", notes = "登录")
     @PostMapping("/login")
     public Object login(@RequestParam("name") String name,
